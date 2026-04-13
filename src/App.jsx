@@ -17,9 +17,13 @@ export default function App () {
     )
   }
 
+  // Est-ce que cet étudiant correspond aux filtres sélectionnés ?
   const matchesFilters = student => {
-    if (filters.length === 0) return true
+    if (filters.length === 0) return true // S’il n’y a aucun filtre, on accepte tout le monde
+    
+    // Est-ce qu’il existe au moins une compétence de l’étudiant qui correspond à un filtre ?
     return student.skills.some(skill =>
+      // Est-ce qu’il existe au moins un filtre qui correspond à cette compétence ?
       filters.some(filter => {
         const matchName = filter
           ? skill.name.toLowerCase() === filter.toLowerCase()
