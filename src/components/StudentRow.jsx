@@ -1,9 +1,12 @@
 import { TableCell, TableRow } from '@mui/material'
 import SkillItem from './SkillItem'
+import { useNavigate } from 'react-router-dom'
 
 export default function StudentRow ({ student }) {
+  const navigate = useNavigate()
+
   return (
-    <TableRow>
+    <TableRow onClick={() => navigate(`/students/${student.id}`)}>
       <TableCell component='th' scope='row'>
         {student.firstName}
       </TableCell>

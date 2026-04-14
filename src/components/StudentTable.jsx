@@ -14,6 +14,7 @@ export default function StudentTable ({ filteredStudents }) {
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label='simple table'>
         <TableHead>
+          
           <TableRow>
             <TableCell>Prénom</TableCell>
             <TableCell align='right'>Nom</TableCell>
